@@ -1,0 +1,21 @@
+Given a string, find the first non-repeating character in it and return it's index. If it doesn't exist, return -1.
+
+Examples:
+
+s = "leetcode"
+return 0.
+
+s = "loveleetcode",
+return 2.
+
+
+Solutions:
+
+class Solution {
+	function firstUniqChar($s) {
+		$string_arr = str_split($s);
+		$string_count_arr = array_count_values($string_arr);
+		$unique_char = array_search(1, $string_count_arr);
+		return $unique_char ? array_search($unique_char, $string_arr) : -1;
+	}
+}
